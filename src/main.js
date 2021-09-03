@@ -109,6 +109,7 @@ var posterImg = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
 
+//this is a test!! delete in the am!
 
 
 var savedPosters = [];
