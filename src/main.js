@@ -105,11 +105,13 @@ var showSavedButton = document.querySelector('.show-saved');
 var showRandomButton = document.querySelector('.show-random');
 var showFormButton = document.querySelector('.show-form');
 
+// Main page poster
 var posterImg = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
 
-//this is a test!! delete in the am!
+//Page views
+// var posterFormPage = document.querySelector('.poster-form');
 
 
 var savedPosters = [];
@@ -118,7 +120,16 @@ var currentPoster;
 // event listeners go here 👇
 window.addEventListener('load', displayRandomPoster)
 showRandomButton.addEventListener('click', displayRandomPoster)
+showFormButton.addEventListener('click', makeYourOwnPoster)
+
 // functions and event handlers go here 👇
+
+function makeYourOwnPoster() {
+  var posterFormPage = document.querySelector('.poster-form').hidden = false;
+  var mainPosterPage = document.querySelector('.main-poster').hidden = true;
+  var savedPostersPage = document.querySelector('.saved-posters').hidden = true;
+}
+
 function displayRandomPoster() {
   posterImg.src = images[getRandomIndex(images)];
   posterTitle.innerText = titles[getRandomIndex(titles)];
@@ -129,3 +140,12 @@ function displayRandomPoster() {
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
+// Pseudocode: Iteration 1 - bullet 1
+// GOALS: ACTIVATE - “Make Your Own Poster” button
+//  [X] create “Make Your Own Poster” button - querySelector and addEventListener
+
+  // THINGS TO HIDE:
+    // Make autohide function link it to addEventListener
+    // bring in if/else statement (if button clicked, THEN hide things)
+
+  // show form and back to main button
