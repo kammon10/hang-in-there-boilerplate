@@ -97,15 +97,73 @@ var quotes = [
   "No matter what people tell you, words and ideas can change the world.",
   "Each person must live their life as a model for others.",
   "A champion is defined not by their wins but by how they can recover when they fall."
+
 ];
+  // query selector variables go here 👇
+var savePosterButton = document.querySelector('.save-poster');
+var showSavedButton = document.querySelector('.show-saved');
+var showRandomButton = document.querySelector('.show-random');
+var showFormButton = document.querySelector('.show-form');
+
+// Main page poster
+var posterImg = document.querySelector('.poster-img');
+var posterTitle = document.querySelector('.poster-title');
+var posterQuote = document.querySelector('.poster-quote');
+
+//Page views
+// var posterFormPage = document.querySelector('.poster-form');
+
+
 var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
+window.addEventListener('load', displayRandomPoster)
+showRandomButton.addEventListener('click', displayRandomPoster)
+showFormButton.addEventListener('click', makeYourOwnPoster)
+// showSavedButton.addEventListener('click', showSavedPosters)
+
+var posterFormPage = document.querySelector('.poster-form');
+var mainPosterPage = document.querySelector('.main-poster');
+var savedPostersPage = document.querySelector('.saved-posters');
 
 // functions and event handlers go here 👇
-// (we've provided one for you to get you started)!
+
+//this function activates when the make your own button is pressed
+function makeYourOwnPoster() {
+  posterFormPage.classList.remove('hidden');
+  mainPosterPage.classList.add('hidden');
+}
+
+//this function activates when the make your own button is pressed
+// function showSavedPosters() {
+//   savedPosters.classList.remove('hidden');
+//   mainPosterPage.classList.
+// }
+
+
+function displayRandomPoster() {
+  posterImg.src = images[getRandomIndex(images)];
+  posterTitle.innerText = titles[getRandomIndex(titles)];
+  posterQuote.innerText = quotes[getRandomIndex(quotes)];
+
+}
+
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
+// Pseudocode: Iteration 1 - bullet 2
+//create function, create addEventListener for showSavedButton
+//using .hidden to select which pages are showen.
+//things to hide: poster-form, main-posters
+//things to show: saved-posters
 
+// Pseudocode: Iteration 1 - bullet 1
+// GOALS: ACTIVATE - “Make Your Own Poster” button
+//  [X] create “Make Your Own Poster” button - querySelector and addEventListener
+
+  // THINGS TO HIDE:
+    // Make autohide function link it to addEventListener
+    // bring in if/else statement (if button clicked, THEN hide things)
+
+  // show form and back to main button
